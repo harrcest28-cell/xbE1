@@ -1,12 +1,16 @@
--- Lime Reborn GUI Library
+-- Lime Reborn GUI
 -- Dark glass aesthetic with neon cyan/pink accents
 
-local Players = game:GetService("Players")
-local UserInputService = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
-local RunService = game:GetService("RunService")
-local CoreGui = game:GetService("CoreGui")
-local HttpService = game:GetService("HttpService")
+local function getSvc(name)
+	local ok, svc = pcall(function() return game:GetService(name) end)
+	return ok and svc or nil
+end
+local Players = getSvc("Players")
+local UserInputService = getSvc("UserInputService")
+local TweenService = getSvc("TweenService")
+local RunService = getSvc("RunService")
+local CoreGui = getSvc("CoreGui")
+local HttpService = getSvc("HttpService")
 
 local LPlayer = Players.LocalPlayer
 local Mouse = LPlayer:GetMouse()
